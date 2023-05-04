@@ -1,3 +1,7 @@
+@import '../../scss/variables.scss';
+
 .footer {
-    
+  height: 120px;
+  background-color: $dark-red-background;
+  border-top: 2px solid $dark-red-border;
 }

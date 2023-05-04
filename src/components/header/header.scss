@@ -1,3 +1,7 @@
+@import '../../scss/variables.scss';
+
 .header {
-    
+  height: 120px;
+  background-color: $dark-red-background;
+  border-bottom: 2px solid $dark-red-border;
 }

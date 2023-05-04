@@ -1,0 +1,19 @@
+@import '../../scss/variables.scss';
+
+.search-form {
+  text-align: center;
+  margin-bottom: 50px;
+  &__description {
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  &__input {
+    width: 30%;
+    height: 40px;
+    background-color: #ffeded;
+    border: 2px solid $dark-red-border;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+}
