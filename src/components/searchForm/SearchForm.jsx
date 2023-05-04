@@ -5,7 +5,7 @@ import './searchForm.scss';
 function SearchForm({ searchValue, setSearchValue }) {
   return (
     <form className="search-form">
-      <span className="search-form__description">Search by:</span>
+      <span className="search-form__description">Search:</span>
       <input
         className="search-form__input"
         type="text"

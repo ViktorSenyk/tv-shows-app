@@ -5,6 +5,10 @@
   border-radius: 0 0 20px 20px;
   cursor: pointer;
 
+  &:hover {
+    box-shadow: 0px 0px 20px 3px $main-font-color;
+  }
+
   &__content-wrapper {
     text-align: center;
     padding: 10px;

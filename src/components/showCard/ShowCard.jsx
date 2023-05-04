@@ -6,7 +6,7 @@ function ShowCard({ showData, setIdForDetails }) {
   const { score, show } = showData;
   const { id, image, name } = show;
   const checkedImg = !!image
-    ? image.medium
+    ? image.original
     : 'https://laktiale.ua/image/xno-image.png.pagespeed.ic.Sdpr6tU3X1.png';
 
   return (

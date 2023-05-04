@@ -19,3 +19,25 @@
     list-style: none;
   }
 }
+
+@media (max-width: 1439px) {
+  .showsList {
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, minmax(400px, auto));
+      grid-auto-rows: minmax(400px, auto);
+      gap: 30px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .showsList {
+    &__list {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, minmax(400px, auto));
+      grid-auto-rows: minmax(400px, auto);
+      gap: 30px;
+    }
+  }
+}

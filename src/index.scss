@@ -28,6 +28,20 @@ body {
 main {
   flex: 1 1 auto;
   width: 1440px;
-  padding: 25px 50px;
+  padding: 25px 40px;
   margin: 0 auto;
+}
+
+@media (max-width: 1439px) {
+  main {
+    width: 1024px;
+    padding: 25px 30px;
+  }
+}
+
+@media (max-width: 1023px) {
+  main {
+    width: 400px;
+    padding: 25px 10px;
+  }
 }

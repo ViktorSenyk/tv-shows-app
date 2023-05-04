@@ -5,9 +5,23 @@
   margin-bottom: 50px;
 
   &__description {
+    position: relative;
     font-size: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: -23px;
+      display: block;
+      width: 23px;
+      height: 23px;
+      background: url('../../../public/img/searchForm/search.svg') no-repeat center;
+      background-size: contain;
+    }
   }
+
   &__input {
     width: 30%;
     height: 35px;
@@ -16,7 +30,31 @@
     font-size: 20px;
     border: 2px solid $dark-red-border;
     border-radius: 10px;
-    padding: 0 10px;
+    outline: none;
+    padding: 0 10px 5px 10px;
     margin: 0 auto;
+
+    &::placeholder {
+      font-style: italic;
+      color: $main-font-color;
+      opacity: 0.3;
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  .search-form {
+    &__input {
+      width: 40%;
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .search-form {
+    &__input {
+      width: 100%;
+    }
   }
 }
