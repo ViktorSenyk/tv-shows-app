@@ -3,14 +3,17 @@
 .search-form {
   text-align: center;
   margin-bottom: 50px;
+
   &__description {
     font-size: 20px;
     margin-right: 20px;
   }
   &__input {
     width: 30%;
-    height: 40px;
-    background-color: #ffeded;
+    height: 35px;
+    background-color: transparent;
+    color: $main-font-color;
+    font-size: 20px;
     border: 2px solid $dark-red-border;
     border-radius: 10px;
     padding: 0 10px;
