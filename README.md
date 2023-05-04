@@ -3,9 +3,9 @@
 
 ( Created with *create-react-app* )
 
-### [Site link]()
+### [Site link](https://inquisitive-platypus-9961df.netlify.app/)
 
-Layout support desktop (up-to-1920) version
+Layout supports mobile, tablet & desktop versions
 
 ### The tech stack is:
 
