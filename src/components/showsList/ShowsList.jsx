@@ -1,42 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { fetchTvShows } from '../../gateways/tvShows';
+
+import SearchForm from '../searchForm/SearchForm';
+import ShowCard from '../showCard/ShowCard';
+import ShowsDetails from '../showDetails/ShowDetails';
 
 import './showsList.scss';
 
-function ShowsList({ showsList, setIsShowsDetails, searchValue }) {
+function ShowsList() {
+  const [searchValue, setSearchValue] = useState('');
+  const [showsList, setShowsList] = useState([]);
+  const [idForDetails, setIdForDetails] = useState(null);
+
+  useEffect(() => {
+    searchValue.length > 1 && fetchTvShows(searchValue).then(data => setShowsList(data));
+  }, [searchValue]);
+
+  const textForWarningMessage =
+    searchValue.length > 1 ? 'Sorry, nothing found with this search' : "Type the show's name";
+
   return (
     <section className="showsList">
+      {idForDetails && (
+        <ShowsDetails
+          idForDetails={idForDetails}
+          setIdForDetails={setIdForDetails}
+          showsList={showsList}
+        />
+      )}
+
+      <SearchForm searchValue={searchValue} setSearchValue={setSearchValue} />
+
       {showsList.length === 0 ? (
-        <p className="showsList__warning">
-          {searchValue.length > 1
-            ? `Sorry, nothing found with this search`
-            : `Type the show's name`}
-        </p>
+        <p className="showsList__warning">{textForWarningMessage}</p>
       ) : (
         <ul className="showsList__list">
-          {showsList.map(({ score, show }) => {
-            const { id, image, name } = show;
+          {showsList.map(showData => {
             return (
-              <li
-                className="showsList__item tv-show-card"
-                key={id}
-                onClick={() => setIsShowsDetails(true)}
-              >
-                <img
-                  className="tv-show-card__img"
-                  src={
-                    !!image
-                      ? image.medium
-                      : 'https://www.ecreativeim.com/blog/wp-content/uploads/2011/05/image-not-found.jpg'
-                  }
-                  alt="TV Show (img)"
-                />
-                <div className="tv-show-card__content-wrapper">
-                  <h3 className="tv-show-card__title">{name}</h3>
-                  <p className="tv-show-card__rating">{`Rating: ${(score * 10).toFixed(
-                    1,
-                  )} / 10`}</p>
-                </div>
-              </li>
+              <ShowCard
+                key={showData.show.id}
+                showData={showData}
+                setIdForDetails={setIdForDetails}
+              />
             );
           })}
         </ul>

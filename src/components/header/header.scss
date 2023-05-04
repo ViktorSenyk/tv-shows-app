@@ -1,7 +1,15 @@
 @import '../../scss/variables.scss';
 
 .header {
-  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
   background-color: $dark-red-background;
   border-bottom: 2px solid $dark-red-border;
+
+  &__title {
+    font-size: 36px;
+    font-family: 'Rye', cursive;
+  }
 }

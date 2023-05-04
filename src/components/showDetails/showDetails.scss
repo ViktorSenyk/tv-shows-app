@@ -1,0 +1,63 @@
+@import '../../scss/variables.scss';
+
+.details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+
+  &__content-wrapper {
+    position: relative;
+    width: 50%;
+    background-color: black;
+    border: 2px solid $dark-red-border;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(5);
+    }
+
+    & > img {
+      width: 100%;
+    }
+  }
+
+  & p {
+    padding: 5px;
+  }
+
+  &__img {
+    width: 40%;
+    float: left;
+    margin-right: 25px;
+  }
+
+  &__title {
+    width: 90%;
+    font-size: 36px;
+    color: $secondary-font-color;
+    margin: 20px 0 20px;
+  }
+
+  &__link {
+    color: $secondary-font-color;
+  }
+}

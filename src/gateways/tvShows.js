@@ -1,5 +1,4 @@
 const baseUrl = 'https://api.tvmaze.com/search/shows?q=';
-// const baseUrl = '';
 
 export const fetchTvShows = text =>
   fetch(`${baseUrl}${text}`)
